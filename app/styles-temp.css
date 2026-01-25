@@ -1,0 +1,25 @@
+/* Project Card Images */
+.img-box {
+    width: 100%;
+    height: 250px;
+    /* Specific height for consistency */
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--bg-elevated);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Fill the container, cropping if needed. Use contain if you want to see full image */
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+    transform: scale(1.05);
+    /* Zoom effect on hover */
+}

@@ -107,8 +107,9 @@ export const projects = [
 ];
 
 export const certifications = [
-    { name: 'Edusave', issuer: 'MOE', year: '2023' },
-    { name: "Director's Roll of Honour", issuer: 'Republic Polytechnic', year: '2025' },
-    { name: 'WSQ Food Safety and Hygiene Level 1', issuer: 'SHRM College Singapore', year: '2024' },
-    { name: 'Fundamental Certificate in Early Childhood Care and Education', issuer: 'Advent Links - SAUC', year: '2025' }
+    { name: 'Edusave', issuer: 'MOE', year: '2023', image: '' },
+    { name: "Director's Roll of Honour", issuer: 'Republic Polytechnic', year: '2025', image: '' },
+    { name: 'WSQ Food Safety and Hygiene Level 1', issuer: 'SHRM College Singapore', year: '2024', image: '' },
+    { name: 'Fundamental Certificate in Early Childhood Care and Education', issuer: 'Advent Links - SAUC', year: '2025', image: '' },
+    { name: 'React Basic', issuer: 'HackerRank', year: '2026', image: '/images/react_basic certificate.png' }
 ];

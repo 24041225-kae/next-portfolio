@@ -1,6 +1,11 @@
+"use client";
 import { certifications } from '../data';
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 export default function About() {
+    const [selectedImage, setSelectedImage] = useState(null);
+
     return (
         <section id="about" className="about-section mb-5 pt-5">
             <div className="about-header">
@@ -86,6 +91,7 @@ export default function About() {
 
             </div>
 
+
             {/* Certifications Section */}
             <div className="mt-5" id="certifications">
                 <h3 className="mb-4">Certifications</h3>
@@ -94,13 +100,26 @@ export default function About() {
                         certifications.map((c, index) => (
                             <div className="col-md-6" key={index}>
                                 <div className="card h-100 border-0 shadow-sm" style={{ background: 'var(--bg-soft)' }}>
-                                    <div className="card-body">
-                                        <h6 className="card-title mb-1">
-                                            {c.name}
-                                        </h6>
-                                        <p className="card-text text-muted-small mb-0">
-                                            {c.issuer} • {c.year}
-                                        </p>
+                                    <div className="card-body d-flex align-items-center gap-3">
+                                        {c.image && (
+                                            <div className="flex-shrink-0">
+                                                <img
+                                                    src={c.image}
+                                                    alt={c.name}
+                                                    className="cert-thumbnail"
+                                                    style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px', cursor: 'zoom-in' }}
+                                                    onClick={() => setSelectedImage(c.image)}
+                                                />
+                                            </div>
+                                        )}
+                                        <div>
+                                            <h6 className="card-title mb-1">
+                                                {c.name}
+                                            </h6>
+                                            <p className="card-text text-muted-small mb-0">
+                                                {c.issuer} • {c.year}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -111,6 +130,23 @@ export default function About() {
                 </div>
             </div>
 
+            {/* Lightbox Modal (Portal) */}
+            {selectedImage && typeof document !== 'undefined' && createPortal(
+                <div className="lightbox-overlay" onClick={() => setSelectedImage(null)}>
+                    <img
+                        src={selectedImage}
+                        alt="Certificate Full View"
+                        className="lightbox-image"
+                        onClick={(e) => e.stopPropagation()}
+                    />
+                    <button
+                        className="btn btn-close btn-close-white position-absolute top-0 end-0 m-4"
+                        onClick={() => setSelectedImage(null)}
+                        aria-label="Close"
+                    ></button>
+                </div>,
+                document.body
+            )}
         </section>
     );
 }
