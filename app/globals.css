@@ -38,7 +38,8 @@ html {
 
 body {
   margin: 0;
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Josefin Sans", system-ui, sans-serif;
+  font-weight: 200;
   background-color: var(--bg);
   /* Enforce dark background color */
   background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 60%),
@@ -122,6 +123,54 @@ body {
 
 .animate-bob {
   animation: bob 2s ease-in-out infinite;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.hobby-pill {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+  cursor: default;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hobby-pill:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px) scale(1.05);
+  animation-play-state: paused;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  border-color: var(--accent);
+}
+
+.hobby-pill i,
+.hobby-pill svg {
+  font-size: 1.1em;
 }
 
 /* --------------------------------------------------------------------
@@ -405,6 +454,23 @@ body {
 #contact,
 #certifications {
   scroll-margin-top: 100px;
+}
+
+.about-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-divider {
+  height: 4px;
+  width: 60px;
+  background: var(--accent);
+  border-radius: 2px;
+  margin: 0 auto 2rem;
 }
 
 .section-title {

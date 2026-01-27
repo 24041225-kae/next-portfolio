@@ -1,37 +1,35 @@
 "use client";
-import { useState } from 'react';
 import Link from 'next/link';
+import useEmblaCarousel from "embla-carousel-react";
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
 
 export default function ProjectDetails({ project }) {
-    const initialImage = (project.images && project.images.length > 0) ? project.images[0] : project.image;
-    const [selectedImage, setSelectedImage] = useState(initialImage);
+    // data/index.js uses 'image' key which is an array of strings or objects {src, caption}
+    const rawImages = Array.isArray(project.image) ? project.image : (project.image ? [project.image] : []);
+    const imageList = rawImages.map(img => typeof img === 'string' ? { src: img, caption: null } : img);
 
-    // Update selected image if project changes
-    // This simple version assumes the component remounts for different projects, 
-    // or we can just rely on the key prop in the parent if needed. 
-    // But for safety let's just default to one state. 
-
-    // Actually, if 'project' prop changes, we might want to reset the image.
-    // simpler to just use the state. 
+    // Embla Carousel State
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
+    const currentCaption = imageList[selectedIndex]?.caption;
 
     return (
         <div className="container my-5">
             <Link href="/#projects" className="btn btn-ghost mb-3">&larr; Back to projects</Link>
             <div className="row">
                 <div className="col-md-7">
-                    <h1 className="text-light">{project.title}</h1>
-                    <p className="text-muted">{project.subtitle}</p>
-                    <p>{project.description}</p>
-                    {project.tech && project.tech.length > 0 && (
-                        <div>
-                            <h5 className="mt-4">Tech used</h5>
-                            <ul>
+                    <div className="d-flex align-items-center flex-wrap gap-3">
+                        <h1 className="text-light mb-0">{project.title}</h1>
+                        {project.tech && project.tech.length > 0 && (
+                            <div className="d-flex gap-2">
                                 {project.tech.map((t, index) => (
-                                    <li key={index}>{t}</li>
+                                    <span key={index} className="badge bg-secondary bg-opacity-50 border border-secondary">{t}</span>
                                 ))}
-                            </ul>
-                        </div>
-                    )}
+                            </div>
+                        )}
+                    </div>
+                    <p className="text-muted mb-4">{project.subtitle}</p>
+                    <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: project.description }} />
                     {project.link && project.link !== '#' && (
                         <a href={project.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                             View live
@@ -39,39 +37,56 @@ export default function ProjectDetails({ project }) {
                     )}
                 </div>
                 <div className="col-md-5">
-                    {project.images && project.images.length > 0 ? (
-                        <div className="project-gallery">
-                            <div className="main-image-container mb-3">
-                                <img
-                                    src={selectedImage}
-                                    alt={project.title}
-                                    className="img-fluid rounded shadow-sm w-100"
-                                    style={{ objectFit: 'cover', maxHeight: '400px' }}
-                                />
+                    {imageList.length > 0 ? (
+                        <div className="embla" style={{ maxWidth: '100%', '--slide-height': '400px' }}>
+                            <div className="embla__viewport" ref={emblaRef} style={{ overflow: 'hidden', borderRadius: '8px' }}>
+                                <div className="embla__container" style={{ display: 'flex' }}>
+                                    {imageList.map((img, index) => (
+                                        <div className="embla__slide" key={index} style={{ flex: '0 0 100%', minWidth: 0 }}>
+                                            <img
+                                                src={img.src}
+                                                alt={`${project.title} ${index + 1}`}
+                                                className="img-fluid w-100"
+                                                style={{ objectFit: 'contain', height: '400px', width: '100%', backgroundColor: project.id === 5 ? 'white' : 'rgba(0,0,0,0.5)' }}
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <div
-                                className="thumbnails-container d-flex gap-2"
-                                style={{ overflowX: 'auto', paddingBottom: '5px' }}
-                            >
-                                {project.images.map((img, index) => (
-                                    <img
-                                        key={index}
-                                        src={img}
-                                        className={`gallery-thumbnail rounded border ${selectedImage === img ? 'border-primary' : 'border-secondary'}`}
-                                        style={{ cursor: 'pointer', opacity: selectedImage === img ? 1 : 0.7 }}
-                                        onClick={() => setSelectedImage(img)}
-                                        alt={`Thumbnail ${index + 1}`}
-                                    />
-                                ))}
-                            </div>
+
+                            {imageList.length > 1 && (
+                                <div className="d-flex flex-column align-items-center mt-3">
+                                    <div className="embla__dots">
+                                        {scrollSnaps.map((_, index) => (
+                                            <DotButton
+                                                key={index}
+                                                onClick={() => onDotButtonClick(index)}
+                                                className={'embla__dot'.concat(
+                                                    index === selectedIndex ? ' embla__dot--selected' : ''
+                                                )}
+                                            />
+                                        ))}
+                                    </div>
+                                    {imageList[selectedIndex].src.toLowerCase().endsWith('.gif') && (
+                                        <div className="text-center mt-2" style={{ animation: 'fadeIn 0.5s ease' }}>
+                                            <span className="text-muted-small text-light fs-2">Video Showcase</span>
+                                        </div>
+                                    )}
+                                    {currentCaption && (
+                                        <div className="text-center mt-3 px-2" style={{ animation: 'fadeIn 0.5s ease' }}>
+                                            <p className="text-muted-small fst-italic">{currentCaption}</p>
+                                        </div>
+                                    )}
+                                </div>
+                            )}
                         </div>
-                    ) : project.image ? (
-                        <img
-                            src={project.image}
-                            alt={project.title}
-                            className="img-fluid rounded shadow-sm"
-                        />
                     ) : null}
+
+                    {project.additionalInfo && (
+                        <div className="mt-4">
+                            <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: project.additionalInfo }} />
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

@@ -2,6 +2,8 @@
 import { certifications } from '../data';
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { FaBicycle, FaBook, FaGamepad, FaFilm, FaMusic, FaPlane } from "react-icons/fa";
+
 
 export default function About() {
     const [selectedImage, setSelectedImage] = useState(null);
@@ -13,12 +15,61 @@ export default function About() {
                 <div className="about-divider"></div>
             </div>
 
-            <p className="about-lead">
-                I am a student at Republic Polytechnic, pursuing a Diploma in Digital Design & Development.
-                I enjoy designing and building meaningful digital experiences — from dashboards to event
-                pages,
-                and simple interactive apps.
-            </p>
+            <div className="card mb-5 border-0 shadow-lg overflow-hidden mx-auto" style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)', maxWidth: '850px' }}>
+                <div className="row g-0">
+                    <div className="col-md-4 d-flex align-items-center justify-content-center p-3">
+                        <img
+                            src="/images/profilepic.JPG"
+                            className="img-fluid rounded-circle shadow"
+                            alt="Profile"
+                            style={{ objectFit: 'cover', objectPosition: 'center 20%', width: '160px', height: '160px' }}
+                        />
+                    </div>
+                    <div className="col-md-8 d-flex align-items-center">
+                        <div className="card-body p-4">
+                            <div className="about-text-content">
+                                <p className="about-lead mb-3 text-light opacity-75">
+                                    I want to be a <strong>Game Developer</strong> in the future. I also enjoy:
+                                </p>
+                                <div className="d-flex flex-wrap gap-3">
+                                    <span className="hobby-pill" style={{ animationDelay: '0s' }}>
+                                        <FaBicycle className="text-primary" /> Cycling
+                                    </span>
+                                    <span className="hobby-pill" style={{ animationDelay: '0.2s' }}>
+                                        <FaBook className="text-success" /> Reading
+                                    </span>
+                                    <span className="hobby-pill" style={{ animationDelay: '0.4s' }}>
+                                        <FaGamepad className="text-danger" /> Video Games
+                                    </span>
+                                    <span className="hobby-pill" style={{ animationDelay: '0.6s' }}>
+                                        <FaFilm className="text-warning" /> Movies
+                                    </span>
+                                    <span className="hobby-pill" style={{ animationDelay: '0.8s' }}>
+                                        <FaMusic className="text-info" /> Music
+                                    </span>
+                                    <span className="hobby-pill" style={{ animationDelay: '1s' }}>
+                                        <FaPlane className="text-secondary" /> Traveling
+                                    </span>
+                                </div>
+
+                                <div className="mt-4">
+                                    <p className="about-lead mb-2 text-light opacity-75">Fun fact, this is one of my <i>favourite</i> songs!</p>
+                                    <iframe
+                                        style={{ borderRadius: '12px' }}
+                                        src="https://open.spotify.com/embed/track/5cRKj1kynNFqiliT2ndZ3y?utm_source=generator"
+                                        width="100%"
+                                        height="152"
+                                        frameBorder="0"
+                                        allowFullScreen=""
+                                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                                        loading="lazy"
+                                    ></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             {/* Highlight Boxes */}
             <div className="about-highlight-grid">
@@ -69,7 +120,7 @@ export default function About() {
                     </div>
                 </div>
 
-                <div className="d-flex gap-4">
+                <div className="d-flex gap-4 mt-5">
                     <div className="highlight-box flex-fill">
                         <h4>Languages</h4>
                         <p>English — Native proficiency</p>
@@ -79,7 +130,6 @@ export default function About() {
                     <div className="highlight-box flex-fill">
                         <div className="d-flex align-items-center gap-2 mb-2">
                             <h4 className="mb-0">Experiences & Volunteer</h4>
-                            <img src="/images/cat.svg" alt="cat" width="24" height="24" className="animate-bob" />
                         </div>
                         <ul>
                             <li>OCBC Ignite Challenge</li>

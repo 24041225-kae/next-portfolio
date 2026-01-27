@@ -47,7 +47,7 @@ export default function Navbar() {
                     </ul>
 
                     <div className="d-flex align-items-center gap-2">
-                        <a href="/resume" className="btn btn-outline-primary btn-sm">
+                        <a href="/Kaelynn_RP_resume.pdf" download="Kaelynn_RP_resume.pdf" className="btn btn-outline-primary btn-sm">
                             <i className="fa fa-download me-1"></i> Resume
                         </a>
                     </div>
