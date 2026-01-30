@@ -1,6 +1,7 @@
 "use client";
 import { certifications } from '../data';
 import { useState } from 'react';
+import Link from 'next/link';
 import { createPortal } from 'react-dom';
 import { FaBicycle, FaBook, FaGamepad, FaFilm, FaMusic, FaPlane } from "react-icons/fa";
 
@@ -32,24 +33,24 @@ export default function About() {
                                     I want to be a <strong>Game Developer</strong> in the future. I also enjoy:
                                 </p>
                                 <div className="d-flex flex-wrap gap-3">
-                                    <span className="hobby-pill" style={{ animationDelay: '0s' }}>
+                                    <Link href="/hobbies/cycling" className="hobby-pill text-decoration-none" style={{ animationDelay: '0s' }}>
                                         <FaBicycle className="text-primary" /> Cycling
-                                    </span>
-                                    <span className="hobby-pill" style={{ animationDelay: '0.2s' }}>
+                                    </Link>
+                                    <Link href="/hobbies/reading" className="hobby-pill text-decoration-none" style={{ animationDelay: '0.2s' }}>
                                         <FaBook className="text-success" /> Reading
-                                    </span>
-                                    <span className="hobby-pill" style={{ animationDelay: '0.4s' }}>
+                                    </Link>
+                                    <Link href="/hobbies/video-games" className="hobby-pill text-decoration-none" style={{ animationDelay: '0.4s' }}>
                                         <FaGamepad className="text-danger" /> Video Games
-                                    </span>
-                                    <span className="hobby-pill" style={{ animationDelay: '0.6s' }}>
+                                    </Link>
+                                    <Link href="/hobbies/movies" className="hobby-pill text-decoration-none" style={{ animationDelay: '0.6s' }}>
                                         <FaFilm className="text-warning" /> Movies
-                                    </span>
-                                    <span className="hobby-pill" style={{ animationDelay: '0.8s' }}>
+                                    </Link>
+                                    <Link href="/hobbies/music" className="hobby-pill text-decoration-none" style={{ animationDelay: '0.8s' }}>
                                         <FaMusic className="text-info" /> Music
-                                    </span>
-                                    <span className="hobby-pill" style={{ animationDelay: '1s' }}>
+                                    </Link>
+                                    <Link href="/hobbies/traveling" className="hobby-pill text-decoration-none" style={{ animationDelay: '1s' }}>
                                         <FaPlane className="text-secondary" /> Traveling
-                                    </span>
+                                    </Link>
                                 </div>
 
                                 <div className="mt-4">

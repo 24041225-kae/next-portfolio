@@ -239,6 +239,20 @@ Apollo serves as a literal and metaphorical "light" in my portfolio. Much like t
             '/images/ITARdemo.gif'
         ],
         link: '#',
+        category: 'Design'
+    },
+    {
+        id: 9,
+        title: 'Life-changing thingy',
+        subtitle: '',
+        tech: ['Next.js, TailwindCSS'],
+        description: ``,
+        image: [
+            '/images/huumonia1.png',
+            '/images/huumonia2.png',
+            '/images/huumonia.gif'
+        ],
+        link: '#',
         category: 'Coding'
     }
 ];
@@ -247,6 +261,52 @@ export const certifications = [
     { name: 'Edusave', issuer: 'MOE', year: '2023', image: '/images/edusave.png' },
     { name: "Director's Roll of Honour", issuer: 'Republic Polytechnic', year: '2025', image: '/images/directorlist.png' },
     { name: 'React Basic', issuer: 'HackerRank', year: '2026', image: '/images/react_basic certificate.png' },
+    { name: 'Javascript Basic', issuer: 'HackerRank', year: '2026', image: '/images/javascript_basic certificate.png' },
+    // { name: 'CSS Basic', issuer: 'HackerRank', year: '2026', image: '/images/css_basic certificate.png' },
+    { name: 'Python for Absolute Beginners', issuer: 'Udemy', year: '2023', image: '' },
     { name: 'WSQ Food Safety and Hygiene Level 1', issuer: 'SHRM College Singapore', year: '2024', image: '' },
     { name: 'Fundamental Certificate in Early Childhood Care and Education', issuer: 'Advent Links - SAUC', year: '2025', image: '' },
+];
+
+export const hobbies = [
+    {
+        id: 'cycling',
+        name: 'Cycling',
+        description: "Exploring the world on two wheels allows me to clear my mind and discover hidden gems around the city. It's not just about the destination, but the journey and the freedom it brings.",
+        images: [
+            { src: './hobbies/cycling.jpg', caption: 'Sembawang - ECP - Changi' },
+            { src: './hobbies/cycling2.jpg', caption: 'Tanjong Rhu Night Ride' },
+            { src: './hobbies/cycling3.jpg', caption: 'Changi Jurassic Mile' }
+        ]
+    },
+    {
+        id: 'readingwriting',
+        name: 'Reading & Writing',
+        description: "Books are my gateway to different worlds and perspectives. I mostly read fiction, but I also enjoy literature and psychology books.",
+        images: []
+    },
+    {
+        id: 'video-games',
+        name: 'Video Games',
+        description: "Gaming is where my passion for interactive storytelling and mechanics began. It fuels my desire to become a Game Developer.",
+        images: []
+    },
+    {
+        id: 'movies',
+        name: 'Movies',
+        description: "Cinema inspires me visually and narratively. I enjoy analyzing cinematography and storytelling techniques.",
+        images: []
+    },
+    {
+        id: 'music',
+        name: 'Music',
+        description: "Music sets the rhythm of my life. From listening to my favorite tracks to exploring new genres, it's a constant companion.",
+        images: []
+    },
+    {
+        id: 'traveling',
+        name: 'Traveling',
+        description: "Experiencing new cultures and landscapes broadens my horizon. Every trip is an adventure and a learning opportunity.",
+        images: []
+    }
 ];

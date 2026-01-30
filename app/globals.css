@@ -156,7 +156,7 @@ body {
   font-size: 0.9rem;
   transition: all 0.3s ease;
   animation: float 3s ease-in-out infinite;
-  cursor: default;
+  cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -668,7 +668,6 @@ footer {
   border-color: var(--accent) !important;
 }
 
-/* =====  OFFICIAL EMBA CAROUSEL CSS  ===== */
 .embla {
   max-width: 48rem;
   margin: auto;
@@ -695,35 +694,6 @@ footer {
   padding-left: var(--slide-spacing);
 }
 
-/* =====  PROJECT CARD STYLING  ===== */
-.project-card {
-  background: #111;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, .35);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  height: var(--slide-height);
-  border: 1px solid var(--border-subtle);
-}
-
-.img-box {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
-  overflow: hidden;
-}
-
-.project-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* =====  EMBA CONTROLS  ===== */
 .embla__controls {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -823,6 +793,33 @@ footer {
 
 .embla__dot--selected:after {
   opacity: 1;
+}
+
+/* ===== PROJECTS GRID ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+/* ===== PROJECT CARD STYLING ===== */
+.project-card {
+  background: var(--bg-elevated);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, .35);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--border-subtle);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 /* Lightbox Modal */
