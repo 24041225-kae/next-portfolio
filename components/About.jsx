@@ -187,7 +187,7 @@ export default function About() {
                             <li className="mb-2">
                                 <button className="btn-link text-decoration-none text-light p-0 border-0 bg-transparent text-start"
                                     onClick={() => openModal([
-                                        { src: '/images/ocbcignite.jpg', caption: 'OCBC Ignite Challenge' },
+                                        { src: '/images/ocbcignite.JPG', caption: 'OCBC Ignite Challenge' },
                                         { src: '/images/ocbcignite2.jpg', caption: 'OCBC Ignite Challenge - ATM Services: For now, and beyond' }
                                     ])}>
                                     • OCBC Ignite Challenge
