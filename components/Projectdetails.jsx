@@ -31,7 +31,7 @@ export default function ProjectDetails({ project }) {
                     <p className="text-muted mb-4">{project.subtitle}</p>
                     <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: project.description }} />
                     {project.link && project.link !== '#' && (
-                        <a href={project.link} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                        <a href={project.link} className="btn btn-primary mt-4" target="_blank" rel="noopener noreferrer">
                             View live
                         </a>
                     )}
