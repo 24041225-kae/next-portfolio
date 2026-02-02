@@ -16,11 +16,13 @@ export default function About() {
     const openModal = (content) => {
         setSelectedContent(content);
         setCurrentIndex(0);
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setSelectedContent(null);
         setCurrentIndex(0);
+        document.body.style.overflow = 'unset';
     };
 
     const nextImage = (e) => {

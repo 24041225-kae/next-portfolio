@@ -12,10 +12,12 @@ export default function Hero() {
 
     const openModal = (src, caption) => {
         setSelectedContent({ src, caption });
+        document.body.style.overflow = 'hidden';
     };
 
     const closeModal = () => {
         setSelectedContent(null);
+        document.body.style.overflow = 'unset';
     };
 
     useEffect(() => {

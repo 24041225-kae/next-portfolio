@@ -97,7 +97,7 @@ To move beyond a static mockup, I utilised Figma’s advanced prototyping featur
             '/images/sustainable4.png',
             '/images/sustainable.gif'
         ],
-        category: 'Coding',
+        category: 'UI/UX',
         github: '',
         link: 'https://www.figma.com/design/DUy4ZlMnVKY4R3tAL0GoI0/C218--CA1?node-id=19-177&t=RV5MvuptZeTQx6R9-1'
     },
@@ -246,15 +246,15 @@ Apollo serves as a literal and metaphorical "light" in my portfolio. Much like t
             },
             '/images/ITARdemo.gif'
         ],
-        category: 'Design',
+        category: 'Unity',
         github: '',
         link: '#'
     },
     {
         id: 9,
         title: 'Huumonia - Save the World',
-        subtitle: '',
-        tech: ['Next.js, TailwindCSS'],
+        subtitle: 'An interactive Next.js experience gamifying the fight against animal abuse.',
+        tech: ['Next.js', 'TailwindCSS', 'Anime.js', 'React'],
         description: `<strong>The Vision</strong>
 Huumonia was created to turn a broad "save the world" prompt into a local reality, focusing on animal abuse and poaching in our own communities. Our goal was to build an interactive experience—rather than just a static site—that uses gamified case studies to transform passive awareness into genuine empathy and critical thinking.
 
