@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { projects } from "../data";
 import Link from "next/link";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
@@ -56,9 +57,19 @@ export default function Projects() {
               )}
 
               <div className="mt-auto">
-                <Link href={`/projects/${p.id}`} className="btn btn-outline-light">
+                <Link href={`/projects/${p.id}`} className="btn btn-outline-light btn-sm">
                   Details
                 </Link>
+                {p.github && (
+                  <a href={p.github} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light btn-sm ms-2">
+                    <FaGithub />
+                  </a>
+                )}
+                {p.link && p.link !== '#' && (
+                  <a href={p.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-light btn-sm ms-2">
+                    <FaExternalLinkAlt />
+                  </a>
+                )}
               </div>
             </div>
           </article>

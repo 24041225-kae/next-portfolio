@@ -35,8 +35,9 @@ This project explores my personal core value of freedom. By navigating through t
             '/images/vr4.png',
             '/images/vr.gif'
         ],
-        link: '#',
-        category: 'Unity'
+        category: 'Unity',
+        github: '',
+        link: '#'
     },
     {
         id: 2,
@@ -66,7 +67,9 @@ The app is built on a full CRUD architecture, enhanced with social and navigatio
             '/images/travelblog.gif'
         ],
         link: '#',
-        category: 'Coding'
+        category: 'Coding',
+        github: 'https://github.com/24041225-kae/TravelBlog-app',
+        live: '#'
     },
     {
         id: 3,
@@ -94,8 +97,9 @@ To move beyond a static mockup, I utilised Figma’s advanced prototyping featur
             '/images/sustainable4.png',
             '/images/sustainable.gif'
         ],
-        link: '#',
-        category: 'Coding'
+        category: 'Coding',
+        github: '',
+        link: 'https://www.figma.com/design/DUy4ZlMnVKY4R3tAL0GoI0/C218--CA1?node-id=19-177&t=RV5MvuptZeTQx6R9-1'
     },
     {
         id: 4,
@@ -119,7 +123,8 @@ Visual Hierarchy: I utilised a classic travel poster layout, using strong leadin
             }
         ],
         link: '#',
-        category: 'UI/UX'
+        category: 'UI/UX',
+        github: ''
     },
     {
         id: 5,
@@ -158,7 +163,8 @@ As a Combination Mark, this project marries a symbolic logomark (the wings) with
             '/images/mylogo4.png'
         ],
         link: '#',
-        category: 'UI/UX'
+        category: 'UI/UX',
+        github: ''
     },
     {
         id: 6,
@@ -181,7 +187,8 @@ Structural Wordplay: My name, "Kaelynn," forms the hat, while core values like "
             '/images/typographyyellow.png'
         ],
         link: '#',
-        category: 'UI/UX'
+        category: 'UI/UX',
+        github: ''
     },
     {
         id: 7,
@@ -205,7 +212,8 @@ Designed for users who struggle with organisation, this application serves as a 
             '/images/IO.gif'
         ],
         link: '#',
-        category: 'Coding'
+        category: 'Coding',
+        github: 'https://github.com/24041225-kae/Item-organiser'
     },
     {
         id: 8,
@@ -238,8 +246,9 @@ Apollo serves as a literal and metaphorical "light" in my portfolio. Much like t
             },
             '/images/ITARdemo.gif'
         ],
-        link: '#',
-        category: 'Design'
+        category: 'Design',
+        github: '',
+        link: '#'
     },
     {
         id: 9,
@@ -252,8 +261,9 @@ Apollo serves as a literal and metaphorical "light" in my portfolio. Much like t
             '/images/huumonia2.png',
             '/images/huumonia.gif'
         ],
-        link: '#',
-        category: 'Coding'
+        category: 'Coding',
+        github: 'https://github.com/24041225-kae/F_9',
+        link: 'https://24041225-kae.github.io/F_9/'
     }
 ];
 
@@ -262,7 +272,8 @@ export const certifications = [
     { name: "Director's Roll of Honour", issuer: 'Republic Polytechnic', year: '2025', image: '/images/directorlist.png' },
     { name: 'React Basic', issuer: 'HackerRank', year: '2026', image: '/images/react_basic certificate.png' },
     { name: 'Javascript Basic', issuer: 'HackerRank', year: '2026', image: '/images/javascript_basic certificate.png' },
-    // { name: 'CSS Basic', issuer: 'HackerRank', year: '2026', image: '/images/css_basic certificate.png' },
+    { name: 'CSS Basic', issuer: 'HackerRank', year: '2026', image: '/images/css_basic certificate.png' },
+    { name: 'Python Basic', issuer: 'HackerRank', year: '2026', image: '/images/python_basic certificate.png' },
     { name: 'Python for Absolute Beginners', issuer: 'Udemy', year: '2023', image: '' },
     { name: 'WSQ Food Safety and Hygiene Level 1', issuer: 'SHRM College Singapore', year: '2024', image: '' },
     { name: 'Fundamental Certificate in Early Childhood Care and Education', issuer: 'Advent Links - SAUC', year: '2025', image: '' },
@@ -274,39 +285,40 @@ export const hobbies = [
         name: 'Cycling',
         description: "Exploring the world on two wheels allows me to clear my mind and discover hidden gems around the city. It's not just about the destination, but the journey and the freedom it brings.",
         images: [
-            { src: './hobbies/cycling.jpg', caption: 'Sembawang - ECP - Changi' },
-            { src: './hobbies/cycling2.jpg', caption: 'Tanjong Rhu Night Ride' },
-            { src: './hobbies/cycling3.jpg', caption: 'Changi Jurassic Mile' }
+            { src: '/images/hobbies/cycling.jpg', caption: 'Sembawang - ECP - Changi' },
+            { src: '/images/hobbies/cycling2.png', caption: 'Tanjong Rhu Night Ride' },
+            { src: '/images/hobbies/cycling3.jpg', caption: 'Changi Jurassic Mile' }
         ]
     },
     {
-        id: 'readingwriting',
+        id: 'reading',
         name: 'Reading & Writing',
-        description: "Books are my gateway to different worlds and perspectives. I mostly read fiction, but I also enjoy literature and psychology books.",
-        images: []
+        description: `Books are my gateway to different worlds and perspectives. I mostly read fiction, but I also enjoy literature and psychology books.
+        <br><br>
+        These are my favourites I have read so far:
+        <ul>
+            <li>The Maze Runner</li>
+            <li>Percy Jackson and the Olympians</li>
+            <li>They Both Died at the End</li>
+            <li>Manga</li>
+            <li>The Apothecary Diaries Light Novels</li>
+        </ul>`,
+        images: [
+            { src: '/images/hobbies/writing.png', caption: 'Writing fiction' },
+        ]
     },
-    {
-        id: 'video-games',
-        name: 'Video Games',
-        description: "Gaming is where my passion for interactive storytelling and mechanics began. It fuels my desire to become a Game Developer.",
-        images: []
-    },
-    {
-        id: 'movies',
-        name: 'Movies',
-        description: "Cinema inspires me visually and narratively. I enjoy analyzing cinematography and storytelling techniques.",
-        images: []
-    },
-    {
-        id: 'music',
-        name: 'Music',
-        description: "Music sets the rhythm of my life. From listening to my favorite tracks to exploring new genres, it's a constant companion.",
-        images: []
-    },
+
     {
         id: 'traveling',
         name: 'Traveling',
         description: "Experiencing new cultures and landscapes broadens my horizon. Every trip is an adventure and a learning opportunity.",
-        images: []
+        images: [{ src: '/images/hobbies/beijing.jpg', caption: '(Beijing/Tianjin, Sep 2025), Went with poly friends ~ had so much fun in USB!' },
+        { src: '/images/hobbies/korea.jpg', caption: '(Seoul, South Korea, Dec 2024), Went with my family - FIRST time seeing snow in person' },
+        { src: '/images/hobbies/jb.jpg', caption: '(Johor Bahru, Malaysia, Jan 2026), Many firsts of everything, first time setting fireworks!!' },
+        { src: '/images/hobbies/forbiddencity.jpg', caption: '(Forbidden City, Beijing, China, Oct 2025), Wanted to visit since I was young' },
+        { src: '/images/hobbies/greatwallofchina.jpg', caption: '(Great Wall of China, Beijing, China, Oct 2025), School Trip - made many amazing friends here' },
+        { src: '/images/hobbies/pokemoncafe.jpg', caption: '(Pokemon Cafe, Osaka, Japan, Apr 2024), First time overseas without my family! Went to visit famous attractions :)' },
+        { src: '/images/hobbies/kotakinabalu.jpg', caption: '(Kota Kinabalu, Malaysia, Dec 2023), Quite chilly in the mountains, loved it' },
+        ]
     }
 ];

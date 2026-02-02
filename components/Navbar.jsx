@@ -17,7 +17,6 @@ export default function Navbar() {
                 <Link className="navbar-brand d-flex align-items-center" href="/">
                     <img src="/images/logo.png" width="50" alt="Logo" className="logo me-2 rounded-circle" />
                     <span className="brand-text me-2">Kaelynn Fong</span>
-                    <img src="/images/cat.svg" width="30" alt="Cat" className="animate-bob" />
                 </Link>
 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -47,7 +46,7 @@ export default function Navbar() {
                     </ul>
 
                     <div className="d-flex align-items-center gap-2">
-                        <a href="/Kaelynn_RP_resume.pdf" download="Kaelynn_RP_resume.pdf" className="btn btn-outline-primary btn-sm">
+                        <a href="/Kaelynn_RP_resume.pdf" download="Kaelynn_RP_resume.pdf" className="btn btn-outline-secondary btn-sm">
                             <i className="fa fa-download me-1"></i> Resume
                         </a>
                     </div>
