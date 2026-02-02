@@ -252,10 +252,20 @@ Apollo serves as a literal and metaphorical "light" in my portfolio. Much like t
     },
     {
         id: 9,
-        title: 'Life-changing thingy',
+        title: 'Huumonia - Save the World',
         subtitle: '',
         tech: ['Next.js, TailwindCSS'],
-        description: ``,
+        description: `<strong>The Vision</strong>
+Huumonia was created to turn a broad "save the world" prompt into a local reality, focusing on animal abuse and poaching in our own communities. Our goal was to build an interactive experience—rather than just a static site—that uses gamified case studies to transform passive awareness into genuine empathy and critical thinking.
+
+<strong>The Logic</strong>
+To handle the interactive complexity, we moved beyond basic web tools to a more advanced stack:
+
+<u>Next.js & Tailwind CSS</u>: Chosen for optimized performance and rapid, consistent UI styling across multiple interactive game states.
+
+<u>Anime.js</u>: Integrated to create fluid, high-quality transitions that guide the user through the narrative experience.
+
+<u>Interactive Modules</u>: Developed a linear flow that leads users through problem-identification games, ending with direct links to real-world donation and support organizations.`,
         image: [
             '/images/huumonia1.png',
             '/images/huumonia2.png',
