@@ -28,7 +28,7 @@ export default function ProjectDetails({ project }) {
                             </div>
                         )}
                     </div>
-                    <p className="text-light opacity-75 mb-4 fs-5 fst-italic ps-3 border-start mt-4" style={{ borderColor: 'var(--accent)' }}>
+                    <p className="text-light opacity-75 mb-4 fs-5 fst-italic ps-3 border-start mt-" style={{ borderColor: 'var(--accent)' }}>
                         {project.subtitle}
                     </p>
                     <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: project.description }} />
