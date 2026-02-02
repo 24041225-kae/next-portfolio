@@ -4,8 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { createPortal } from 'react-dom';
 import { FaBicycle, FaBook, FaGamepad, FaFilm, FaMusic, FaPlane } from "react-icons/fa";
-import { MdWorkspacePremium } from "react-icons/md";
-import { IoNewspaperOutline } from "react-icons/io5";
+
 
 
 export default function About() {
