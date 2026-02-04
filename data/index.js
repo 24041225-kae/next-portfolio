@@ -286,8 +286,8 @@ export const certifications = [
     { name: 'CSS Basic', issuer: 'HackerRank', year: '2026', image: '/images/css_basic certificate.png' },
     { name: 'Python Basic', issuer: 'HackerRank', year: '2026', image: '/images/python_basic certificate.png' },
     { name: 'Python for Absolute Beginners', issuer: 'Udemy', year: '2023', image: '' },
-    { name: 'WSQ Food Safety and Hygiene Level 1', issuer: 'SHRM College Singapore', year: '2024', image: '/images/ec_cert.jpg' },
-    { name: 'Fundamental Certificate in Early Childhood Care and Education', issuer: 'Advent Links - SAUC', year: '2025', image: '' },
+    { name: 'WSQ Food Safety and Hygiene Level 1', issuer: 'SHRM College Singapore', year: '2024', image: '/images/wsq_cert.jpg' },
+    { name: 'Fundamental Certificate in Early Childhood Care and Education', issuer: 'Advent Links - SAUC', year: '2025', image: '/images/ec_cert.jpg' },
 ];
 
 export const hobbies = [
