@@ -1,17 +1,17 @@
 "use client";
-import Link from 'next/link';
-import useEmblaCarousel from "embla-carousel-react";
-import { DotButton, useDotButton } from "./EmblaCarouselDotButton";
+import Link from 'next/link'; // imports link component
+import useEmblaCarousel from "embla-carousel-react"; // imports carousel hook
+import { DotButton, useDotButton } from "./EmblaCarouselDotButton"; // imports carousel dots
 
-export default function ProjectDetails({ project }) {
+export default function ProjectDetails({ project }) { // project details component
     // data/index.js uses 'image' key which is an array of strings or objects {src, caption}
-    const rawImages = Array.isArray(project.image) ? project.image : (project.image ? [project.image] : []);
-    const imageList = rawImages.map(img => typeof img === 'string' ? { src: img, caption: null } : img);
+    const rawImages = Array.isArray(project.image) ? project.image : (project.image ? [project.image] : []); // normalizes images to array
+    const imageList = rawImages.map(img => typeof img === 'string' ? { src: img, caption: null } : img); // normalizes image objects
 
-    // Embla Carousel State
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
-    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi);
-    const currentCaption = imageList[selectedIndex]?.caption;
+    // embla carousel state
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }); // initializes carousel
+    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi); // handles dot buttons
+    const currentCaption = imageList[selectedIndex]?.caption; // gets current caption
 
     return (
         <div className="container my-5">

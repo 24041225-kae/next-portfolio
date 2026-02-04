@@ -1,27 +1,27 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react' // imports react hooks
 
-export const usePrevNextButtons = (emblaApi) => {
-    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
-    const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+export const usePrevNextButtons = (emblaApi) => { // hook for carousel buttons
+    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true) // state for prev button
+    const [nextBtnDisabled, setNextBtnDisabled] = useState(true) // state for next button
 
-    const onPrevButtonClick = useCallback(() => {
+    const onPrevButtonClick = useCallback(() => { // handles prev click
         if (!emblaApi) return
         console.log('Prev button clicked', emblaApi.canScrollPrev(), emblaApi.scrollProgress())
         emblaApi.scrollPrev()
     }, [emblaApi])
 
-    const onNextButtonClick = useCallback(() => {
+    const onNextButtonClick = useCallback(() => { // handles next click
         if (!emblaApi) return
         console.log('Next button clicked', emblaApi.canScrollNext(), emblaApi.scrollProgress())
         emblaApi.scrollNext()
     }, [emblaApi])
 
-    const onSelect = useCallback((emblaApi) => {
-        setPrevBtnDisabled(!emblaApi.canScrollPrev())  // ← FIXED: was canGoToPrev()
-        setNextBtnDisabled(!emblaApi.canScrollNext())  // ← FIXED: was canGoToNext()
+    const onSelect = useCallback((emblaApi) => { // checks button state
+        setPrevBtnDisabled(!emblaApi.canScrollPrev())  // checks if can scroll prev
+        setNextBtnDisabled(!emblaApi.canScrollNext())  // checks if can scroll next
     }, [])
 
-    useEffect(() => {
+    useEffect(() => { // runs on init
         if (!emblaApi) return
 
         onSelect(emblaApi)
@@ -36,7 +36,7 @@ export const usePrevNextButtons = (emblaApi) => {
     }
 }
 
-export const PrevButton = (props) => {
+export const PrevButton = (props) => { // prev button component
     const { children, disabled, ...restProps } = props
 
     return (
@@ -59,7 +59,7 @@ export const PrevButton = (props) => {
     )
 }
 
-export const NextButton = (props) => {
+export const NextButton = (props) => { // next button component
     const { children, disabled, ...restProps } = props
 
     return (

@@ -1,26 +1,26 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react' // imports react hooks
 
-export const useDotButton = (emblaApi) => {
-  const [selectedIndex, setSelectedIndex] = useState(0)
-  const [scrollSnaps, setScrollSnaps] = useState([])
+export const useDotButton = (emblaApi) => { // hook for dots
+  const [selectedIndex, setSelectedIndex] = useState(0) // state for selected index
+  const [scrollSnaps, setScrollSnaps] = useState([]) // state for scroll snaps
 
   const onDotButtonClick = useCallback(
-    (index) => {
+    (index) => { // handles dot click
       if (!emblaApi) return
       emblaApi.scrollTo(index)
     },
     [emblaApi]
   )
 
-  const onInit = useCallback((emblaApi) => {
-    setScrollSnaps(emblaApi.scrollSnapList())  // ← FIXED: was snapList()
+  const onInit = useCallback((emblaApi) => { // handles init
+    setScrollSnaps(emblaApi.scrollSnapList())  // gets scroll snaps
   }, [])
 
-  const onSelect = useCallback((emblaApi) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap())  // ← FIXED: was selectedSnap()
+  const onSelect = useCallback((emblaApi) => { // handles select
+    setSelectedIndex(emblaApi.selectedScrollSnap())  // gets selected snap
   }, [])
 
-  useEffect(() => {
+  useEffect(() => { // runs on init
     if (!emblaApi) return
 
     onInit(emblaApi)
@@ -36,7 +36,7 @@ export const useDotButton = (emblaApi) => {
   }
 }
 
-export const DotButton = (props) => {
+export const DotButton = (props) => { // dot button component
   const { children, ...restProps } = props
 
   return (

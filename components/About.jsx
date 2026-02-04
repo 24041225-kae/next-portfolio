@@ -1,44 +1,44 @@
 "use client";
-import { certifications } from '../data';
-import { useState } from 'react';
-import Link from 'next/link';
-import { createPortal } from 'react-dom';
-import { FaBicycle, FaBook, FaGamepad, FaFilm, FaMusic, FaPlane } from "react-icons/fa";
+import { certifications } from '../data'; // imports certifications data
+import { useState } from 'react'; // imports usestate hook
+import Link from 'next/link'; // imports link component
+import { createPortal } from 'react-dom'; // imports portal for modal
+import { FaBicycle, FaBook, FaGamepad, FaFilm, FaMusic, FaPlane } from "react-icons/fa"; // imports icons
 
 
 
-export default function About() {
+export default function About() { // about component
     // selectedContent: { src, caption } | [{ src, caption }] | null
-    const [selectedContent, setSelectedContent] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [selectedContent, setSelectedContent] = useState(null); // state for modal content
+    const [currentIndex, setCurrentIndex] = useState(0); // state for current image index
 
-    const openModal = (content) => {
+    const openModal = (content) => { // function to open modal
         setSelectedContent(content);
         setCurrentIndex(0);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflow = 'hidden'; // stops background scrolling
     };
 
-    const closeModal = () => {
+    const closeModal = () => { // function to close modal
         setSelectedContent(null);
         setCurrentIndex(0);
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = 'unset'; // resumes background scrolling
     };
 
-    const nextImage = (e) => {
+    const nextImage = (e) => { // function to go to next image
         e.stopPropagation();
         if (Array.isArray(selectedContent)) {
             setCurrentIndex((prev) => (prev + 1) % selectedContent.length);
         }
     };
 
-    const prevImage = (e) => {
+    const prevImage = (e) => { // function to go to previous image
         e.stopPropagation();
         if (Array.isArray(selectedContent)) {
             setCurrentIndex((prev) => (prev - 1 + selectedContent.length) % selectedContent.length);
         }
     };
 
-    const currentItem = Array.isArray(selectedContent) ? selectedContent[currentIndex] : selectedContent;
+    const currentItem = Array.isArray(selectedContent) ? selectedContent[currentIndex] : selectedContent; // gets current item to display
 
     return (
         <section id="about" className="about-section mb-5 pt-5">
@@ -51,7 +51,7 @@ export default function About() {
                 <div className="row g-0">
                     <div className="col-md-4 d-flex align-items-center justify-content-center p-3">
                         <div className="position-relative">
-                            {/* Thought Bubble */}
+                            {/* thought bubble */}
                             <div className="thought-bubble">
                                 <div className="d-flex gap-2 justify-content-center align-items-center">
                                     <img
@@ -123,12 +123,12 @@ export default function About() {
                 </div>
             </div>
 
-            {/* Highlight Boxes */}
+            {/* highlight boxes */}
             <div className="about-highlight-grid">
 
                 <div className="highlight-box">
                     <div className="d-flex flex-column gap-4">
-                        {/* Row 1 */}
+                        {/* row 1 */}
                         <div className="carousel">
                             <div className="group">
                                 {["Microsoft Excel", "Power BI", "Word", "Canva", "Illustrator"].map((skill, index) => (
@@ -142,7 +142,7 @@ export default function About() {
                             </div>
                         </div>
 
-                        {/* Row 2 (Reverse) */}
+                        {/* row 2 (reverse) */}
                         <div className="carousel carousel-reverse">
                             <div className="group">
                                 {["Photoshop", "Figma", "Python", "HTML", "CSS"].map((skill, index) => (
@@ -156,7 +156,7 @@ export default function About() {
                             </div>
                         </div>
 
-                        {/* Row 3 */}
+                        {/* row 3 */}
                         <div className="carousel">
                             <div className="group">
                                 {["JavaScript", "C#", "UI/UX fundamentals", "MySQL", "React"].map((skill, index) => (
@@ -212,7 +212,7 @@ export default function About() {
             </div>
 
 
-            {/* Certifications Section */}
+            {/* certifications section */}
             <div className="mt-5" id="certifications">
                 <h3 className="mb-4">Certifications</h3>
                 <div className="row g-3">
@@ -250,12 +250,12 @@ export default function About() {
                 </div>
             </div>
 
-            {/* Lightbox Modal (Portal) */}
+            {/* lightbox modal (portal) */}
             {selectedContent && typeof document !== 'undefined' && createPortal(
                 <div className="lightbox-overlay" onClick={closeModal}>
                     <div className="d-flex flex-column align-items-center position-relative" style={{ maxWidth: '90%', maxHeight: '90%', width: '100%' }}>
 
-                        {/* Carousel Controls */}
+                        {/* carousel controls */}
                         {Array.isArray(selectedContent) && selectedContent.length > 1 && (
                             <>
                                 <button className="btn btn-link text-white position-absolute start-0 top-50 translate-middle-y fs-1" onClick={prevImage} style={{ zIndex: 1060 }}>

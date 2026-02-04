@@ -1,4 +1,4 @@
-/* Thought Bubble Styles */
+/* thought bubble styles */
 .thought-bubble {
     position: absolute;
     top: -60px;
@@ -8,9 +8,12 @@
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     z-index: 10;
+    /* keeps it on top */
     animation: floatBubble 3s ease-in-out infinite alternate;
+    /* floating animation */
 }
 
+/* triangle tail for the bubble */
 .thought-bubble::before {
     content: '';
     position: absolute;
@@ -24,8 +27,8 @@
     transform: rotate(20deg);
 }
 
+/* small circle for thought effect */
 .thought-bubble::after {
-    /* Smaller bubble for thought effect */
     content: '';
     position: absolute;
     bottom: -20px;
@@ -37,6 +40,7 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* animation keyframes */
 @keyframes floatBubble {
     0% {
         transform: translateY(0);

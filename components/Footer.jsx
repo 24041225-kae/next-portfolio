@@ -1,9 +1,10 @@
-export default function Footer() {
+export default function Footer() { // footer component
     return (
         <footer className="mt-5">
             <div className="container text-center py-4">
                 <p className="mb-1">&copy; {new Date().getFullYear()} Kaelynn Fong</p>
                 <p className="small text-light mb-2">Student Portfolio</p>
+                {/* social media links */}
                 <div>
                     <a href="https://www.linkedin.com/in/kaelynnfong" target="_blank" rel="noreferrer" className="text-light me-3 text-decoration-none">
                         <i className="fab fa-linkedin fa-lg"></i>

@@ -1,6 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css';
-import Script from 'next/script';
+import 'bootstrap/dist/css/bootstrap.min.css'; // imports bootstrap css
+import './globals.css'; // imports global css
+import Script from 'next/script'; // imports script component
 
 export const metadata = {
     title: 'Portfolio | Kaelynn Fong',

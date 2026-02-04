@@ -1,28 +1,30 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
+import Link from 'next/link'; // imports link component
+import { usePathname } from 'next/navigation'; // imports usepathname hook
+import { useEffect } from 'react'; // imports useeffect hook
 
-export default function Navbar() {
-    const pathname = usePathname();
+export default function Navbar() { // navbar component
+    const pathname = usePathname(); // gets current path
 
-    // Highlight active link simple logic or standard bootstrap behavior
-    // For scrolling sections, usually we need JS to detect scroll position. 
-    // For now we keep it simple as per original bootstrap behavior.
+    // highlight active link simple logic or standard bootstrap behavior
+    // for now we keep it simple as per original bootstrap behavior.
 
     return (
         <nav className="navbar navbar-expand-lg navbar-glass sticky-top">
             <div className="container">
+                {/* brand logo and name */}
                 <Link className="navbar-brand d-flex align-items-center" href="/">
                     <img src="/images/logo.png" width="50" alt="Logo" className="logo me-2 rounded-circle" />
                     <span className="brand-text me-2">Kaelynn Fong</span>
                 </Link>
 
+                {/* mobile toggle button */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
+                {/* nav links */}
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav me-3">
                         <li className="nav-item">
@@ -45,6 +47,7 @@ export default function Navbar() {
                         </li>
                     </ul>
 
+                    {/* resume button */}
                     <div className="d-flex align-items-center gap-2">
                         <a href="/Kaelynn_RP_resume.pdf" download="Kaelynn_RP_resume.pdf" className="btn btn-outline-secondary btn-sm">
                             <i className="fa fa-download me-1"></i> Resume

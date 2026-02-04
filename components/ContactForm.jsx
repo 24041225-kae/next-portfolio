@@ -1,15 +1,15 @@
 "use client";
-import { useState } from "react";
-import emailjs from '@emailjs/browser';
+import { useState } from "react"; // imports usestate hook
+import emailjs from '@emailjs/browser'; // imports emailjs service
 
-function ContactForm() {
-    const [userInput, setUserInput] = useState({
+function ContactForm() { // contact form component
+    const [userInput, setUserInput] = useState({ // state for user input
         name: "",
         email: "",
         message: ""
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e) => { // updates state on input change
         const { name, value } = e.target;
         setUserInput({
             ...userInput,
@@ -17,31 +17,31 @@ function ContactForm() {
         });
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (e) => { // handles form submission
+        e.preventDefault(); // prevents default form submission
 
-        const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-        const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-        const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+        const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID; // gets service id
+        const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID; // gets template id
+        const userID = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY; // gets user id
 
-        try {
+        try { // tries to send email
             const emailParams = {
                 name: userInput.name,
                 email: userInput.email,
                 message: userInput.message
             };
 
-            const res = await emailjs.send(serviceID, templateID, emailParams, userID);
+            const res = await emailjs.send(serviceID, templateID, emailParams, userID); // sends email
 
-            if (res.status === 200) {
+            if (res.status === 200) { // if successful
                 alert("Message sent successfully!");
-                setUserInput({
+                setUserInput({ // resets form
                     name: "",
                     email: "",
                     message: ""
                 });
             }
-        } catch (error) {
+        } catch (error) { // catches error
             alert("Failed to send message. Please try again later.");
         }
     };

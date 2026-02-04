@@ -1,27 +1,27 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import anime from 'animejs';
-import Link from 'next/link';
-import { createPortal } from 'react-dom';
-import { IoNewspaperOutline } from "react-icons/io5";
+import { useEffect, useRef, useState } from 'react'; // imports hooks
+import anime from 'animejs'; // imports animejs
+import Link from 'next/link'; // imports link component
+import { createPortal } from 'react-dom'; // imports portal
+import { IoNewspaperOutline } from "react-icons/io5"; // imports icon
 
-export default function Hero() {
-    const wrapperRef = useRef(null);
-    const [selectedContent, setSelectedContent] = useState(null);
+export default function Hero() { // hero component
+    const wrapperRef = useRef(null); // ref for wrapper
+    const [selectedContent, setSelectedContent] = useState(null); // state for modal content
 
-    const openModal = (src, caption) => {
+    const openModal = (src, caption) => { // opens modal
         setSelectedContent({ src, caption });
         document.body.style.overflow = 'hidden';
     };
 
-    const closeModal = () => {
+    const closeModal = () => { // closes modal
         setSelectedContent(null);
         document.body.style.overflow = 'unset';
     };
 
-    useEffect(() => {
-        // Animate the orb and overlay together
+    useEffect(() => { // runs on mount
+        // animate the orb and overlay together
         anime({
             targets: ['.orb-main', '.orb-overlay'],
             translateX: [-20, 20],
@@ -33,7 +33,7 @@ export default function Hero() {
             easing: 'easeInOutSine'
         });
 
-        // Animate text elements on load
+        // animate text elements on load
         anime({
             targets: ['.eyebrow', '.hero-title', '.hero-subtitle', '.hero-body', '.hero-actions'],
             translateY: [20, 0],
@@ -43,8 +43,8 @@ export default function Hero() {
             easing: 'easeOutExpo'
         });
 
-        // Wave animations calling anime on the path 'd' attribute or translation
-        // Since we don't have the original wave images, we're using SVGs
+        // wave animations calling anime on the path 'd' attribute or translation
+        // since we don't have the original wave images, we're using svgs
         anime({
             targets: '#wave-path-1',
             d: [
@@ -76,17 +76,17 @@ export default function Hero() {
 
                 <div className="wave-container" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', overflow: 'hidden', lineHeight: 0, zIndex: 0 }}>
                     {/* ... waves ... */}
-                    {/* Wave 3 (Back) */}
+                    {/* wave 3 (back) */}
                     <svg style={{ position: 'absolute', bottom: 0, left: 0, opacity: 0.3, zIndex: 1 }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path fill="#a855f7" fillOpacity="1" d="M0,96L80,122.7C160,149,320,203,480,202.7C640,203,800,149,960,138.7C1120,128,1280,160,1360,176L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
                     </svg>
 
-                    {/* Wave 2 (Middle) */}
+                    {/* wave 2 (middle) */}
                     <svg id="wave-2-svg" style={{ position: 'absolute', bottom: 0, left: '-5%', width: '110%', opacity: 0.5, zIndex: 2 }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path id="wave-path-2" fill="#14b8a6" fillOpacity="1" d="M0,224L80,213.3C160,203,320,181,480,186.7C640,192,800,224,960,218.7C1120,213,1280,171,1360,149.3L1440,128L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
                     </svg>
 
-                    {/* Wave 1 (Front) */}
+                    {/* wave 1 (front) */}
                     <svg style={{ position: 'absolute', bottom: 0, left: 0, opacity: 0.8, zIndex: 3 }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                         <path id="wave-path-1" fill="#050712" fillOpacity="0.8" d="M0,288L80,272C160,256,320,224,480,224C640,224,800,256,960,266.7C1120,277,1280,267,1360,261.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
                     </svg>
@@ -137,7 +137,7 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Lightbox Modal (Portal) */}
+            {/* lightbox modal (portal) */}
             {selectedContent && typeof document !== 'undefined' && createPortal(
                 <div className="lightbox-overlay" onClick={closeModal} style={{ zIndex: 1055 }}>
                     <div className="d-flex flex-column align-items-center" style={{ maxWidth: '90%', maxHeight: '90%' }}>

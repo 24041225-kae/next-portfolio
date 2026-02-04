@@ -1,16 +1,16 @@
 "use client";
-import React, { useEffect } from 'react';
-import anime from 'animejs';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import Projects from '../components/Projects';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import React, { useEffect } from 'react'; // imports react and useeffect
+import anime from 'animejs'; // imports animejs for animations
+import Navbar from '../components/Navbar'; // imports navbar component
+import Hero from '../components/Hero'; // imports hero component
+import About from '../components/About'; // imports about component
+import Projects from '../components/Projects'; // imports projects component
+import Contact from '../components/Contact'; // imports contact component
+import Footer from '../components/Footer'; // imports footer component
 
-export default function Home() {
-    useEffect(() => {
-        anime({
+export default function Home() { // main home page function
+    useEffect(() => { // runs when the page loads
+        anime({ // animates the page elements
             targets: 'main',
             opacity: [0, 1],
             translateY: [20, 0],
@@ -22,18 +22,18 @@ export default function Home() {
 
     return (
         <>
-            <Navbar />
-            <Hero />
+            <Navbar /> {/* displays navbar */}
+            <Hero /> {/* displays hero section */}
             <main className="container my-5">
-                {/* Flash message placeholder - can be implemented with useSearchParams if needed */}
+                {/* main content container */}
 
-                <About />
-                <hr className="my-5" />
-                <Projects />
-                <hr className="my-5" />
-                <Contact />
+                <About /> {/* displays about section */}
+                <hr className="my-5" /> {/* divider */}
+                <Projects /> {/* displays projects section */}
+                <hr className="my-5" /> {/* divider */}
+                <Contact /> {/* displays contact section */}
             </main>
-            <Footer />
+            <Footer /> {/* displays footer */}
         </>
     );
 }

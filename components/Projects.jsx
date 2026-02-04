@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { projects } from "../data";
-import Link from "next/link";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react"; // imports usestate hook
+import { projects } from "../data"; // imports projects data
+import Link from "next/link"; // imports link component
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa"; // imports icons
 
-export default function Projects() {
-  const [filter, setFilter] = useState("all");
+export default function Projects() { // projects component
+  const [filter, setFilter] = useState("all"); // filter state
 
-  const filtered = projects.filter(
+  const filtered = projects.filter( // filters projects based on category
     (p) => filter === "all" || p.category.toLowerCase() === filter
   );
 
@@ -18,11 +18,11 @@ export default function Projects() {
       </div>
 
       <nav className="filter-tabs mb-4">
-        {["all", "ui/ux", "unity", "coding"].map((f) => (
+        {["all", "ui/ux", "unity", "coding"].map((f) => ( // maps through filter options
           <button
             key={f}
-            onClick={() => setFilter(f)}
-            className={`nav-link ${filter === f ? "active" : ""}`}
+            onClick={() => setFilter(f)} // sets filter on click
+            className={`nav-link ${filter === f ? "active" : ""}`} // adds active class if selected
             type="button"
           >
             {f.charAt(0).toUpperCase() + f.slice(1).replace("ui/ux", "UI/UX")}
@@ -31,7 +31,7 @@ export default function Projects() {
       </nav>
 
       <div className="projects-grid">
-        {filtered.map((p) => (
+        {filtered.map((p) => ( // maps through filtered projects
           <article className="project-card d-flex flex-column text-center" key={p.id}>
             {p.image && (
               <div className="img-box mb-3">
@@ -48,7 +48,7 @@ export default function Projects() {
 
               {p.tech?.length && (
                 <div className="mb-3">
-                  {p.tech.map((t, i) => (
+                  {p.tech.map((t, i) => ( // maps through tech stack
                     <span key={i} className="badge bg-light text-dark me-1 mb-1">
                       {t}
                     </span>
