@@ -279,6 +279,7 @@ To handle the interactive complexity, we moved beyond basic web tools to a more 
 
 export const certifications = [
     { name: 'Edusave', issuer: 'MOE', year: '2023', image: '/images/edusave.png' },
+    { name: 'Edusave', issuer: 'MOE', year: '2025', image: '/images/edusave2.jpg' },
     { name: "Director's Roll of Honour", issuer: 'Republic Polytechnic', year: '2025', image: '/images/directorlist.png' },
     { name: 'React Basic', issuer: 'HackerRank', year: '2026', image: '/images/react_basic certificate.png' },
     { name: 'Javascript Basic', issuer: 'HackerRank', year: '2026', image: '/images/javascript_basic certificate.png' },
