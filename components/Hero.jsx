@@ -107,21 +107,22 @@ export default function Hero() { // hero component
                             exploring UI/UX, web design, and front-end development.
                         </p>
                         <div className="hero-actions mt-4">
-                            <Link href="#projects" className="btn btn-primary me-2">View Projects</Link>
-                            <Link href="#about" className="btn btn-ghost">More about me</Link>
-                        </div>
+                            <Link href="#projects" className="btn btn-primary me-2">View Projects</Link>                        </div>
                     </div>
                     <div className="col-lg-5 hero-side text-lg-end text-center">
                         <div className="hero-pill">
                             <span className="pill-label">Available for:</span>
-                            <span className="pill-value">Internships & collaborations
-                                <button
-                                    onClick={() => openModal('/images/testimonial.png', 'ITE Internship Testimonial - Prudential Innovation Team')}
-                                    className="btn btn-link p-0 border-0 ms-2"
-                                    title="Testimonial"
-                                >
-                                    <IoNewspaperOutline className="text-white" size={20} style={{ filter: 'drop-shadow(0 0 5px rgba(255,255,255,0.5))' }} />
-                                </button></span>
+                            <span className="pill-value">Internships & collaborations</span>
+                        </div>
+                        <div className="d-flex align-items-center justify-content-center justify-content-lg-end gap-2 mt-2">
+                            <span className="text-muted-small fst-italic">Here is my testimonial</span>
+                            <button
+                                onClick={() => openModal('/images/testimonial.png', 'ITE Internship Testimonial - Prudential Innovation Team')}
+                                className="btn btn-link p-0 border-0"
+                                title="Testimonial"
+                            >
+                                <IoNewspaperOutline className="text-white" size={20} style={{ filter: 'drop-shadow(0 0 5px rgba(255,255,255,0.5))' }} />
+                            </button>
                         </div>
                         <div className="hero-stats mt-4">
                             <div className="d-flex flex-column align-items-center align-items-lg-end">

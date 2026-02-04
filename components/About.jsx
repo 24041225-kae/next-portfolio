@@ -11,6 +11,7 @@ export default function About() { // about component
     // selectedContent: { src, caption } | [{ src, caption }] | null
     const [selectedContent, setSelectedContent] = useState(null); // state for modal content
     const [currentIndex, setCurrentIndex] = useState(0); // state for current image index
+    const [showAllCerts, setShowAllCerts] = useState(false); // state for showing all certifications
 
     const openModal = (content) => { // function to open modal
         setSelectedContent(content);
@@ -217,37 +218,79 @@ export default function About() { // about component
                 <h3 className="mb-4">Certifications</h3>
                 <div className="row g-3">
                     {certifications && certifications.length > 0 ? (
-                        certifications.map((c, index) => (
-                            <div className="col-md-6" key={index}>
-                                <div className="card h-100 border-0 shadow-sm" style={{ background: 'var(--bg-soft)' }}>
-                                    <div className="card-body d-flex align-items-center gap-3">
-                                        {c.image && (
-                                            <div className="flex-shrink-0">
-                                                <img
-                                                    src={c.image}
-                                                    alt={c.name}
-                                                    className="cert-thumbnail"
-                                                    style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px', cursor: 'zoom-in' }}
-                                                    onClick={() => openModal({ src: c.image, caption: c.name })}
-                                                />
+                        <>
+                            {certifications.filter(c => c.issuer === 'HackerRank').map((c, index) => (
+                                <div className="col-md-6" key={`hr-${index}`}>
+                                    <div className="card h-100 border-0 shadow-sm" style={{ background: 'var(--bg-soft)' }}>
+                                        <div className="card-body d-flex align-items-center gap-3">
+                                            {c.image && (
+                                                <div className="flex-shrink-0">
+                                                    <img
+                                                        src={c.image}
+                                                        alt={c.name}
+                                                        className="cert-thumbnail"
+                                                        style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px', cursor: 'zoom-in' }}
+                                                        onClick={() => openModal({ src: c.image, caption: c.name })}
+                                                    />
+                                                </div>
+                                            )}
+                                            <div>
+                                                <h6 className="card-title mb-1">
+                                                    {c.name}
+                                                </h6>
+                                                <p className="card-text text-muted-small mb-0">
+                                                    {c.issuer} • {c.year}
+                                                </p>
                                             </div>
-                                        )}
-                                        <div>
-                                            <h6 className="card-title mb-1">
-                                                {c.name}
-                                            </h6>
-                                            <p className="card-text text-muted-small mb-0">
-                                                {c.issuer} • {c.year}
-                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))
+                            ))}
+
+                            {showAllCerts && certifications.filter(c => c.issuer !== 'HackerRank').map((c, index) => (
+                                <div className="col-md-6" key={`other-${index}`}>
+                                    <div className="card h-100 border-0 shadow-sm" style={{ background: 'var(--bg-soft)' }}>
+                                        <div className="card-body d-flex align-items-center gap-3">
+                                            {c.image && (
+                                                <div className="flex-shrink-0">
+                                                    <img
+                                                        src={c.image}
+                                                        alt={c.name}
+                                                        className="cert-thumbnail"
+                                                        style={{ width: '50px', height: '50px', objectFit: 'cover', borderRadius: '8px', cursor: 'zoom-in' }}
+                                                        onClick={() => openModal({ src: c.image, caption: c.name })}
+                                                    />
+                                                </div>
+                                            )}
+                                            <div>
+                                                <h6 className="card-title mb-1">
+                                                    {c.name}
+                                                </h6>
+                                                <p className="card-text text-muted-small mb-0">
+                                                    {c.issuer} • {c.year}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </>
                     ) : (
                         <p className="text-muted">No certifications loaded.</p>
                     )}
                 </div>
+
+                {/* view more button */}
+                {certifications.some(c => c.issuer !== 'HackerRank') && (
+                    <div className="text-center mt-4">
+                        <button
+                            className="btn btn-ghost btn-sm"
+                            onClick={() => setShowAllCerts(!showAllCerts)}
+                        >
+                            {showAllCerts ? 'View Less' : 'View More'}
+                        </button>
+                    </div>
+                )}
             </div>
 
             {/* lightbox modal (portal) */}

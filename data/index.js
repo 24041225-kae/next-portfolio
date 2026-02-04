@@ -296,7 +296,7 @@ export const hobbies = [
         name: 'Cycling',
         description: "Exploring the world on two wheels allows me to clear my mind and discover hidden gems around the city. It's not just about the destination, but the journey and the freedom it brings.",
         images: [
-            { src: '/images/hobbies/cycling.jpg', caption: 'Sembawang - ECP - Changi' },
+            { src: '/images/hobbies/cycling.JPG', caption: 'Sembawang - ECP - Changi' },
             { src: '/images/hobbies/cycling2.png', caption: 'Tanjong Rhu Night Ride' },
             { src: '/images/hobbies/cycling3.jpg', caption: 'Changi Jurassic Mile' }
         ]
@@ -329,7 +329,7 @@ export const hobbies = [
         { src: '/images/hobbies/forbiddencity.jpg', caption: '(Forbidden City, Beijing, China, Oct 2025), Wanted to visit since I was young' },
         { src: '/images/hobbies/greatwallofchina.jpg', caption: '(Great Wall of China, Beijing, China, Oct 2025), School Trip - made many amazing friends here' },
         { src: '/images/hobbies/pokemoncafe.jpg', caption: '(Pokemon Cafe, Osaka, Japan, Apr 2024), First time overseas without my family! Went to visit famous attractions :)' },
-        { src: '/images/hobbies/kotakinabalu.jpg', caption: '(Kota Kinabalu, Malaysia, Dec 2023), Quite chilly in the mountains, loved it' },
+        { src: '/images/hobbies/kotakinabalu.JPG', caption: '(Kota Kinabalu, Malaysia, Dec 2023), Quite chilly in the mountains, loved it' },
         ]
     }
 ];
