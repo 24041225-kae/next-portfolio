@@ -141,6 +141,11 @@ export default function About() { // about component
                                     <div className="skill" key={`dup-${index}`}>{skill}</div>
                                 ))}
                             </div>
+                            <div aria-hidden className="group">
+                                {["Microsoft Excel", "Power BI", "Word", "Canva", "Illustrator"].map((skill, index) => (
+                                    <div className="skill" key={`dup-${index}`}>{skill}</div>
+                                ))}
+                            </div>
                         </div>
 
                         {/* row 2 (reverse) */}
@@ -162,6 +167,11 @@ export default function About() { // about component
                             <div className="group">
                                 {["JavaScript", "C#", "UI/UX fundamentals", "MySQL", "React"].map((skill, index) => (
                                     <div className="skill" key={index}>{skill}</div>
+                                ))}
+                            </div>
+                            <div aria-hidden className="group">
+                                {["JavaScript", "C#", "UI/UX fundamentals", "MySQL", "React"].map((skill, index) => (
+                                    <div className="skill" key={`dup-${index}`}>{skill}</div>
                                 ))}
                             </div>
                             <div aria-hidden className="group">

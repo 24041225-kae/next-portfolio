@@ -274,6 +274,22 @@ To handle the interactive complexity, we moved beyond basic web tools to a more 
         category: 'Coding',
         github: 'https://github.com/24041225-kae/F_9',
         link: 'https://24041225-kae.github.io/F_9/'
+    },
+    {
+        id: 10,
+        title: 'RP Community',
+        subtitle: 'A community space for RP students to share notes, post questions and announcements, and make events.',
+        tech: ['React'],
+        description: `<strong>The Vision</strong>
+        RP Community is a platform designed to foster a stronger sense of community and collaboration among students at Republic Polytechnic. It serves as a centralized hub where students can easily share academic resources, seek help from peers, stay updated with important announcements, and organize events.`,
+        image: [
+            '/images/huumonia1.png',
+            '/images/huumonia2.png',
+            '/images/huumonia.gif'
+        ],
+        category: 'Coding',
+        github: 'https://github.com/24041225-kae/F_9',
+        link: 'https://24041225-kae.github.io/F_9/'
     }
 ];
 
