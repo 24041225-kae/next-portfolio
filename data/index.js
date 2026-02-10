@@ -280,16 +280,30 @@ To handle the interactive complexity, we moved beyond basic web tools to a more 
         title: 'RP Community',
         subtitle: 'A community space for RP students to share notes, post questions and announcements, and make events.',
         tech: ['React'],
-        description: `<strong>The Vision</strong>
-        RP Community is a platform designed to foster a stronger sense of community and collaboration among students at Republic Polytechnic. It serves as a centralized hub where students can easily share academic resources, seek help from peers, stay updated with important announcements, and organize events.`,
+        description: `<strong>The Vision</strong><br>
+RP Community was designed to strengthen campus engagement at Republic Polytechnic by addressing a common student pain point: fragmented information. Important events, study resources, and announcements are often spread across multiple platforms, making it difficult for students to stay informed and involved. The vision was to create a single, inclusive digital hub where students could connect academically and socially in one place.
+
+<strong>The Logic</strong><br>
+To support a wide range of interactions—from event participation to note sharing—the platform was designed as a full-featured web application rather than a static information site. This allows students to actively contribute content instead of passively consuming it.
+
+<u>Centralised Content System</u>: All campus-related activities such as events, notes, and community posts are brought together into one platform, reducing information fragmentation and improving accessibility.
+
+<u>Role-Based Interaction</u>: While all users can view public content, logged-in students are empowered to create, edit, and manage their own posts, notes, and events, ensuring accountability and content ownership.
+
+<u>Event Analytics & Dashboards</u>: Event organisers and administrators gain insights into engagement through RSVP counts, view tracking, and popularity metrics, enabling more data-driven planning and decision-making.
+<strong>The Outcome</strong><br>
+RP Community encourages active participation rather than passive scrolling. By combining social interaction, academic support, and event discovery in a single platform, it fosters a more connected student community, improves peer-to-peer learning, and increases overall engagement in campus life.
+`,
         image: [
-            '/images/huumonia1.png',
-            '/images/huumonia2.png',
-            '/images/huumonia.gif'
+            '/images/unitedrp1.png',
+            '/images/unitedrp2.png',
+            '/images/unitedrp3.png',
+            '/images/unitedrp4.png',
+            '/images/unitedrp.gif'
         ],
         category: 'Coding',
-        github: 'https://github.com/24041225-kae/F_9',
-        link: 'https://24041225-kae.github.io/F_9/'
+        github: 'https://github.com/24041225-kae/CA2_C219',
+        link: 'https://monumental-gaufre-ed6370.netlify.app/'
     }
 ];
 
