@@ -291,6 +291,7 @@ To support a wide range of interactions—from event participation to note shari
 <u>Role-Based Interaction</u>: While all users can view public content, logged-in students are empowered to create, edit, and manage their own posts, notes, and events, ensuring accountability and content ownership.
 
 <u>Event Analytics & Dashboards</u>: Event organisers and administrators gain insights into engagement through RSVP counts, view tracking, and popularity metrics, enabling more data-driven planning and decision-making.
+<br><br>
 <strong>The Outcome</strong><br>
 RP Community encourages active participation rather than passive scrolling. By combining social interaction, academic support, and event discovery in a single platform, it fosters a more connected student community, improves peer-to-peer learning, and increases overall engagement in campus life.
 `,
