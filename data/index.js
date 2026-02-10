@@ -340,7 +340,7 @@ export const hobbies = [
         name: 'Traveling',
         description: "Experiencing new cultures and landscapes broadens my horizon. Every trip is an adventure and a learning opportunity.",
         images: [{ src: '/images/hobbies/beijing.jpg', caption: '(Beijing/Tianjin, Sep 2025), Went with poly friends ~ had so much fun in USB!' },
-        { src: '/images/hobbies/korea.jpg', caption: '(Seoul, South Korea, Dec 2024), Went with my family - FIRST time seeing snow in person' },
+        { src: '/images/hobbies/korea.JPG', caption: '(Seoul, South Korea, Dec 2024), Went with my family - FIRST time seeing snow in person' },
         { src: '/images/hobbies/jb.jpg', caption: '(Johor Bahru, Malaysia, Jan 2026), Many firsts of everything, first time setting fireworks!!' },
         { src: '/images/hobbies/forbiddencity.jpg', caption: '(Forbidden City, Beijing, China, Oct 2025), Wanted to visit since I was young' },
         { src: '/images/hobbies/greatwallofchina.jpg', caption: '(Great Wall of China, Beijing, China, Oct 2025), School Trip - made many amazing friends here' },
