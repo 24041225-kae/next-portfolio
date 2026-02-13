@@ -35,7 +35,7 @@ This project explores my personal core value of freedom. By navigating through t
             '/images/vr4.png',
             '/images/vr.gif'
         ],
-        category: 'Unity',
+        category: 'AR/VR development',
         github: '',
         link: '#'
     },
@@ -99,7 +99,12 @@ To move beyond a static mockup, I utilised Figma’s advanced prototyping featur
         ],
         category: 'UI/UX',
         github: '',
-        link: 'https://www.figma.com/design/DUy4ZlMnVKY4R3tAL0GoI0/C218--CA1?node-id=19-177&t=RV5MvuptZeTQx6R9-1'
+        link: 'https://www.figma.com/design/DUy4ZlMnVKY4R3tAL0GoI0/C218--CA1?node-id=19-177&t=RV5MvuptZeTQx6R9-1',
+        palette: [
+            { code: '#8A9A5B' },
+            { code: '#4A3728' },
+            { code: '#FFFDD0' }
+        ]
     },
     {
         id: 4,
@@ -112,9 +117,10 @@ This project explores the intersection of graphic design and environmental story
 <strong>Art Direction & Composition</strong>
 Visual Hierarchy: I utilised a classic travel poster layout, using strong leading lines to draw the viewer’s eye from the foreground details up to the primary landmark and headline.
 
-<strong>Color Palette</strong>: The colors were chosen to evoke a specific emotional response—using warm, hopeful tones to represent "possibility" or high-contrast, moody shades to suggest "mystery," aligning with my personal brand's aesthetic.
+<strong>Typography</strong>: I selected typefaces that reflect the character of the destination—balancing modern, clean sans-serifs with stylised display fonts to create a "modern yet timeless" look.
 
-<strong>Typography</strong>: I selected typefaces that reflect the character of the destination—balancing modern, clean sans-serifs with stylised display fonts to create a "modern yet timeless" look.`,
+<strong>Color Palette</strong>: The colors were chosen to evoke a specific emotional response—using warm, hopeful tones to represent "possibility" or high-contrast, moody shades to suggest "mystery," aligning with my personal brand's aesthetic.`,
+
         image: [
             '/images/travelposter.png',
             {
@@ -124,7 +130,13 @@ Visual Hierarchy: I utilised a classic travel poster layout, using strong leadin
         ],
         link: '#',
         category: 'UI/UX',
-        github: ''
+        github: '',
+        palette: [
+            {code: '#4D4D46'},
+            {code: '#D2B48C'},
+            {code: '#86A0B8'},
+            {code: '#8ED6D9'}
+        ]
     },
     {
         id: 5,
@@ -139,15 +151,15 @@ This logo serves as a visual manifestation of my identity, centering on the init
 <strong>Symbolism: The Wings of Aspiration</strong>
 The defining feature of the mark is the stylised wing motif layered behind the typography. Inspired by the theme of freedom, these wings represent my core values: the drive to rise above challenges and the pursuit of unlimited possibilities. It is a nod to the "Wings of Freedom"—symbolising a hopeful outlook and the resilience required to seek a meaningful life.
 
+<strong>Intentionality</strong>: The minimalist scheme ensures the logo is modern and versatile, while the underlying theme of "love in life’s little things" ensures the design feels grounded and authentic rather than cold.</u>
+
 <strong>Color Theory & Mood</strong>
 The choice of a monochromatic, neutral palette was driven by a curated moodboard reflecting my personality.
 
 <u><strong>Black & Dark Tones</strong>: Evoke mystery and the depth of self-discovery.</u>
 
 <u><strong>White & Light Gray</strong>: Maintain a sense of openness and hope.</u>
-
-
-<strong>Intentionality</strong>: The minimalist scheme ensures the logo is modern and versatile, while the underlying theme of "love in life’s little things" ensures the design feels grounded and authentic rather than cold.</u>`,
+`,
         additionalInfo: `<strong>Design Architecture</strong>
 As a Combination Mark, this project marries a symbolic logomark (the wings) with a logotype (the initials). This duality ensures strong brand recognition while providing a rich narrative layer. The result is a professional identity that mirrors my quiet ambition and desire for thoughtful self-expression.`,
         image: [
@@ -164,7 +176,36 @@ As a Combination Mark, this project marries a symbolic logomark (the wings) with
         ],
         link: '#',
         category: 'UI/UX',
-        github: ''
+        github: '',
+        palette: [
+            {name: 'First',
+                colors:[
+                    {code: '#dfe1e6'},
+                    {code: '#757c76'},
+                    {code: '#444b4c'},
+                ]
+            },
+            {name: 'Second',
+                colors:[
+                    {code: '#444b4c'},
+                    {code: '#757c76'},
+                    {code: '#b1b7be'},
+                ]
+            },
+            {name: 'Third',
+                colors:[
+                    {code: '#ffffff'},
+                    {code: '#231f20'},
+                ]
+            },
+            {name: 'Fourth',
+                colors:[
+                    {code: '#444b4c'},
+                    {code: '#1d2424'},
+                    {code: '#dfe1e6'},
+                ]
+            },
+        ]   
     },
     {
         id: 6,
@@ -179,7 +220,9 @@ Structural Wordplay: My name, "Kaelynn," forms the hat, while core values like "
 
 <strong>Visual Movement</strong>: I used vector path manipulation to warp text into an anatomical stride, representing my journey toward becoming a game developer.
 
-<strong>Palette</strong>: A vibrant mix of magenta and indigo highlights the energy and mystery of the "Beyond".`,
+<strong>Color Theory & Mood</strong>
+My color schemes are a visual reflection of my love for travel and the diverse atmospheres I encounter across the globe. The vibrant Analogous palette captures the neon-lit energy of bustling international cityscapes at night, while the high-contrast Triadic scheme mirrors the bold, eclectic colors of tropical destinations and cultural landmarks. Grounding these is a Monochromatic blue palette that evokes the serene, expansive feeling of open skies and vast oceans, tying my design identity to the sense of freedom and "adventure" that drives my explorations.
+`,
         image: [
             '/images/typographyblack.png',
             '/images/typographypurple.png',
@@ -188,7 +231,33 @@ Structural Wordplay: My name, "Kaelynn," forms the hat, while core values like "
         ],
         link: '#',
         category: 'UI/UX',
-        github: ''
+        github: '',
+        palette: [
+            {
+                name: 'Analogous',
+                colors: [
+                    { code: '#be15ea' },
+                    { code: '#ea15ab' },
+                    { code: '#5415ea' }
+                ]
+            },
+            {
+                name: 'Triadic',
+                colors: [
+                    { code: '#FFFA00' },
+                    { code: '#00FFFA' },
+                    { code: '#FA00FF' }
+                ]
+            },
+            {
+                name: 'Monochromatic',
+                colors: [
+                    { code: '#5A97C5' },
+                    { code: '#60819B' },
+                    { code: '#46A6F0' }
+                ]
+            }
+        ]
     },
     {
         id: 7,
@@ -246,7 +315,7 @@ Apollo serves as a literal and metaphorical "light" in my portfolio. Much like t
             },
             '/images/ITARdemo.gif'
         ],
-        category: 'Unity',
+        category: 'AR/VR development',
         github: '',
         link: '#'
     },

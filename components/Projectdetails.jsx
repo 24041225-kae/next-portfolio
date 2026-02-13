@@ -2,6 +2,7 @@
 import Link from 'next/link'; // imports link component
 import useEmblaCarousel from "embla-carousel-react"; // imports carousel hook
 import { DotButton, useDotButton } from "./EmblaCarouselDotButton"; // imports carousel dots
+import PaletteShowcase from './PaletteShowcase';
 
 export default function ProjectDetails({ project }) { // project details component
     // data/index.js uses 'image' key which is an array of strings or objects {src, caption}
@@ -28,7 +29,7 @@ export default function ProjectDetails({ project }) { // project details compone
                             </div>
                         )}
                     </div>
-                    <p className="text-light opacity-75 mb-4 fs-5 fst-italic ps-3 border-start mt-4" style={{ borderColor: 'var(--accent)' }}>
+                    <p className="text-light opacity-75 mb-4 fs-5 fst-italic ps-3 border-start mt-4 " style={{ borderColor: 'var(--accent)' }}>
                         {project.subtitle}
                     </p>
                     <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: project.description }} />
@@ -87,6 +88,13 @@ export default function ProjectDetails({ project }) { // project details compone
                     {project.additionalInfo && (
                         <div className="mt-4">
                             <div style={{ whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: project.additionalInfo }} />
+                        </div>
+                    )}
+
+                    {project.category === 'UI/UX' && project.palette && (
+                        <div className="mt-5">
+                            <hr className="mb-4" style={{ borderColor: 'var(--border-subtle)' }} />
+                            <PaletteShowcase palette={project.palette} />
                         </div>
                     )}
                 </div>

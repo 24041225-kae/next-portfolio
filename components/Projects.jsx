@@ -7,7 +7,7 @@ export default function Projects() { // projects component
   const [filter, setFilter] = useState("all"); // filter state
 
   const filtered = projects.filter( // filters projects based on category
-    (p) => filter === "all" || p.category.toLowerCase() === filter
+    (p) => filter === "all" || p.category.toLowerCase() === filter.toLowerCase()
   );
 
   return (
@@ -18,7 +18,7 @@ export default function Projects() { // projects component
       </div>
 
       <nav className="filter-tabs mb-4">
-        {["all", "ui/ux", "unity", "coding"].map((f) => ( // maps through filter options
+        {["all", "UI/UX", "AR/VR development", "coding"].map((f) => ( // maps through filter options
           <button
             key={f}
             onClick={() => setFilter(f)} // sets filter on click
