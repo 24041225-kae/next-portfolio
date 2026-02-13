@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react"; // imports usestate hook
 import emailjs from '@emailjs/browser'; // imports emailjs service
+import { toast } from 'react-toastify';
 
 function ContactForm() { // contact form component
     const [userInput, setUserInput] = useState({ // state for user input
@@ -33,8 +34,17 @@ function ContactForm() { // contact form component
 
             const res = await emailjs.send(serviceID, templateID, emailParams, userID); // sends email
 
-            if (res.status === 200) { // if successful
-                alert("Message sent successfully!");
+            if (res.status === 200) {
+                toast.success("Message sent!", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
                 setUserInput({ // resets form
                     name: "",
                     email: "",
@@ -42,7 +52,16 @@ function ContactForm() { // contact form component
                 });
             }
         } catch (error) { // catches error
-            alert("Failed to send message. Please try again later.");
+            toast.error("Failed to send message. Please try again later.", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+            });
         }
     };
 

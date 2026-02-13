@@ -3,7 +3,7 @@ import { certifications } from '../data'; // imports certifications data
 import { useState } from 'react'; // imports usestate hook
 import Link from 'next/link'; // imports link component
 import { createPortal } from 'react-dom'; // imports portal for modal
-import { FaBicycle, FaBook, FaGamepad, FaFilm, FaMusic, FaPlane } from "react-icons/fa"; // imports icons
+import { FaBicycle, FaBook, FaPlane } from "react-icons/fa"; // imports icons
 
 
 

@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css'; // imports bootstrap css
 import './globals.css'; // imports global css
-import Script from 'next/script'; // imports script component
+import Script from 'next/script';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // imports script component
 
 export const metadata = {
     title: 'Portfolio | Kaelynn Fong',
@@ -19,6 +21,18 @@ export default function RootLayout({ children }) {
             <body>
                 {children}
                 <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" />
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme="dark"
+                />
             </body>
         </html>
     )
